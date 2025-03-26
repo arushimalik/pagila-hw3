@@ -12,3 +12,10 @@
  *
  * Your goal should be to have your queries remain correct even if the data in the database changes arbitrarily.
  */
+
+SELECT count(*) AS count
+FROM Customer AS C
+JOIN Address AS A ON C.address_id = A.address_id
+JOIN City AS CI ON A.city_id = CI.city_id
+JOIN Country AS CO ON CI.country_id = CO.country_id
+WHERE CO.country_id <> 103;
